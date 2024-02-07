@@ -1,6 +1,7 @@
 import turtle
 import math
 
+
 class PythagorasTree:
     def __init__(self, recursion_level=5, size=55):
         self.recursion_level = recursion_level
@@ -29,7 +30,7 @@ class PythagorasTree:
         self.draw_square(size)
         left_size = size * math.sqrt(3) / 2
         right_size = size / 2
-        
+
         # Left branch
         self.painter.forward(size)
         self.painter.left(90)
@@ -38,7 +39,7 @@ class PythagorasTree:
         self.painter.forward(left_size)
         self.painter.left(90)
         self.draw_node(left_size, level - 1)
-        
+
         # Right branch
         self.painter.right(180)
         self.painter.forward(right_size)
@@ -55,6 +56,7 @@ class PythagorasTree:
         self.draw_node(self.size, self.recursion_level)
         self.painter.hideturtle()
 
+
 def main():
     recursion_level = 7
     size = 55
@@ -65,6 +67,7 @@ def main():
     tree = PythagorasTree(recursion_level, size)
     tree.draw_tree()
     turtle.done()
+
 
 if __name__ == "__main__":
     main()

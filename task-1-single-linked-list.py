@@ -3,10 +3,11 @@ class Node:
         self.data = data
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
-    
+
     def append(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -16,7 +17,7 @@ class LinkedList:
         while last_node.next:
             last_node = last_node.next
         last_node.next = new_node
-    
+
     def print_list(self):
         cur_node = self.head
         while cur_node:
@@ -33,7 +34,7 @@ class LinkedList:
             prev = current
             current = next_temp
         self.head = prev
-    
+
     def merge_sort(self, head):
         if not head or not head.next:
             return head
@@ -48,21 +49,21 @@ class LinkedList:
         slow = head
         fast = head
         prev = None
-        
+
         while fast and fast.next:
             prev = slow
             slow = slow.next
             fast = fast.next.next
-        
+
         if prev:
             prev.next = None
-        
+
         return head, slow
 
     def merge(self, left, right):
         dummy = Node(0)
         tail = dummy
-        
+
         while left and right:
             if left.data < right.data:
                 tail.next = left
@@ -71,21 +72,22 @@ class LinkedList:
                 tail.next = right
                 right = right.next
             tail = tail.next
-        
+
         if left:
             tail.next = left
         elif right:
             tail.next = right
-        
+
         return dummy.next
 
     def sort(self):
         self.head = self.merge_sort(self.head)
 
+
 def merge_sorted_lists(l1, l2):
     dummy = Node(0)
     tail = dummy
-    
+
     while l1 and l2:
         if l1.data < l2.data:
             tail.next = l1
@@ -94,13 +96,14 @@ def merge_sorted_lists(l1, l2):
             tail.next = l2
             l2 = l2.next
         tail = tail.next
-    
+
     if l1:
         tail.next = l1
     elif l2:
         tail.next = l2
-    
+
     return dummy.next
+
 
 def main():
     print(f"*** GoIT Neo Algo Final Project ***")
@@ -144,6 +147,7 @@ def main():
         print(current.data, end=" -> ")
         current = current.next
     print("None")
+
 
 if __name__ == "__main__":
     main()
