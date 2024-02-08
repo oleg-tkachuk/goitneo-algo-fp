@@ -94,6 +94,8 @@ def draw_graph(G, paths, source):
 
 
 def main():
+    print(f"*** GoIT Neo Algo Final Project ***")
+
     G = nx.Graph()
     G.add_nodes_from(nodes)
     G.add_edges_from(edges)
