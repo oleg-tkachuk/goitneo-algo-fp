@@ -110,13 +110,13 @@ def main():
 
     # DFS
     colors = {}
-    title_text_dfs = "DFS Binary Tree Visualization"
+    title_text_dfs = "Depth First Search"
     dfs(tree_root, colors, 0, len(heap))
     draw_tree(tree_root, colors, title_text_dfs)
 
     # BFS
     colors = {}
-    title_text_bfs = "BFS Binary Tree Visualization"
+    title_text_bfs = "Breadth First Search"
     bfs(tree_root, colors, len(heap))
     draw_tree(tree_root, colors, title_text_bfs)
 
