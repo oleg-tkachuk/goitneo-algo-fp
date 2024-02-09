@@ -1,5 +1,6 @@
-import turtle
 import math
+import turtle
+import argparse
 
 
 class PythagorasTree:
@@ -57,8 +58,16 @@ class PythagorasTree:
         self.painter.hideturtle()
 
 
+def cli():
+    parser = argparse.ArgumentParser(description="Creating a Pythagoras tree fractal using recursion.")
+    parser.add_argument("-r", "--recursion_level", type=int, default=7,
+                        help="Sets the recursion level.")
+    args = parser.parse_args()
+    return args.recursion_level
+
+
 def main():
-    recursion_level = 7
+    recursion_level = cli()
     size = 55
 
     print(f"*** GoIT Neo Algo Final Project ***")
