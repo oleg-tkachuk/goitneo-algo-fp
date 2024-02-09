@@ -55,7 +55,8 @@ def format_output(selected_items, items):
         table_data.append([item, items[item]['cost'], items[item]['calories']])
         total_calories += items[item]['calories']
         total_cost += items[item]['cost']
-    table_data.append(["Total", total_cost, total_calories])
+    table_data.append(["", "", ""])
+    table_data.append(["TOTAL:", total_cost, total_calories])
     print(tabulate(table_data, headers=["Item", "Cost", "Calories"]))
 
 

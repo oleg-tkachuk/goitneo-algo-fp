@@ -43,6 +43,8 @@ def draw_tree(tree_root):
         data=True)}  # Використовуйте значення вузла для міток
 
     plt.figure(figsize=(8, 5))
+    plt.title("Visualization of a binary heap\n", fontsize=14,
+              fontweight='bold', color='black', loc='center')
     nx.draw(tree, pos=pos, labels=labels, arrows=False,
             node_size=2500, node_color=colors)
     plt.show()
